@@ -18,13 +18,15 @@ class SanitizationHandler
         else if(is_array($data)){
             return $this->sanitizeArray($data);
         }
+
+        return $data;
     }
 
-    public function sanitizeItem($data){
+    public function sanitizeItem(string $data){
         return $this->sanitizer->sanitizeItem($data);
     }
 
-    public function sanitizeArray($data){
+    public function sanitizeArray(array $data){
         return array_map([$this, 'sanitizeItem'], $data);
     }
 }

@@ -15,7 +15,7 @@ class BaseModel extends Model
     public $sanitize = [];
     public $sanitizer = BaseSanitizer::class;
 
-    public function getSanitizer() :ISanitizer{
+    public final function getSanitizer() :ISanitizer {
         return new $this->sanitizer;
     }
 }
